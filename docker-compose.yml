@@ -1,0 +1,55 @@
+version: '3'
+services:
+    archangeldb:
+        image: 172.31.20.70:8080/sprint/archangeldb
+        container_name: archangeldb
+        networks:
+                arch_net:
+                        ipv4_address: 192.168.10.10
+                        aliases:
+                                - archangeldb
+        tty: true
+        stdin_open: true
+        restart: always
+
+    service:
+        image: 172.31.20.70:8080/sprint/archangelms
+        container_name: archangelms
+        networks:
+                arch_net:
+                        ipv4_address: 192.168.10.20
+                        aliases:
+                                - archangelms
+        ports:
+            - 8880:8080
+        depends_on:
+            - archangeldb
+
+    ui:
+        image: 172.31.20.70:8080/sprint/archangelui
+        container_name: archangelui
+        networks:
+                arch_net:
+                        ipv4_address: 192.168.10.30
+        ports:
+            - 80:8080
+        depends_on:
+            - service
+
+    dozzle:
+        image: amir20/dozzle
+        container_name: dozzle
+        networks:
+                arch_net:
+                        ipv4_address: 192.168.10.40
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        ports:
+            - 8080:8080
+
+networks:
+    arch_net:
+        driver: bridge
+        ipam:
+            driver: default
+            config: [{subnet: 192.168.10.0/24}]
