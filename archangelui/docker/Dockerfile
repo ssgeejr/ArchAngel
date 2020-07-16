@@ -1,10 +1,10 @@
-FROM java:8
+FROM tomcat:7-jre8
 
 LABEL maintainer="ioexcept@gmail.com"
 LABEL version="1.1"
 
+ADD pasedb.war /usr/local/tomcat/webapps/
+ADD server.xml /usr/local/tomcat/conf/server.xml
+RUN rm -rf /usr/local/tomcat/webapps/ROOT*
 
-WORKDIR /
-ADD . /
-EXPOSE 8080
-CMD ["java", "-jar", "archAngelFrontEnd.jar"]
+EXPOSE 80

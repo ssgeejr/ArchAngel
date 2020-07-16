@@ -29,10 +29,10 @@ public class FrontEndServlet extends HttpServlet {
 //				String key = noNulls((String)request.getParameter("fieldUno")).equals("0")?"Manufacturer":"Marketing Name";
 				String car = noNulls((String)request.getParameter("car"));
 				System.out.println("Value: " + car);
-				System.out.println("setting URL to: http://archangelms:8080/archangel/query");
+				System.out.println("setting URL to: http://127.0.0.1:8080/archangel/query");
 //when linking two containers, you map to the EXPORT port not the mapped port				
-//				URL url = new URL("http://archangelms:9000/archangel/query");
-				URL url = new URL("http://archangelms:8080/archangel/query");
+//				URL url = new URL("http://127.0.0.1:9000/archangel/query");
+				URL url = new URL("http://127.0.0.1:8080/archangel/query");
 				conn = (HttpURLConnection) url.openConnection();
 				conn.setDoOutput(true);
 				conn.setRequestMethod("POST");

@@ -23,7 +23,7 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<tomcat7-groupId>org.apache.tomcat.maven</tomcat7-groupId>
 		<tomcat7-artifactId>tomcat7-maven-plugin</tomcat7-artifactId>
-		<tomcat7-version>2.1</tomcat7-version>
+		<tomcat7-version>2.3-SNAPSHOT</tomcat7-version>
 		<tomcat8-groupId>org.apache.tomcat.maven</tomcat8-groupId>
 		<tomcat8-artifactId>tomcat8-maven-plugin</tomcat8-artifactId>
 		<tomcat8-version>3.0-r1756463</tomcat8-version>
