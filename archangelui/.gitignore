@@ -1,3 +1,30 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+
+# DUB
+.dub
+docs.json
+__dummy.html
+docs/
+
+# Code coverage
+*.lst
+
+# ---------------------------
+
 # Compiled class file
 *.class
 
@@ -22,19 +49,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-/target
-service/target
-frontend/target
-
-
+target/
 .extract
-service/.extract
-frontend/.extrace
-
 .service
-service/.service
-frontend/.service
-
 .settings
-service/.settings
-frontend/.settings
