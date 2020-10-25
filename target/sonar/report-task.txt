@@ -1,6 +1,0 @@
-projectKey=org.ioexcept:ArchAngel
-serverUrl=http://firefly.sprint.com/sonarqube
-serverVersion=8.4.2.36762
-dashboardUrl=http://firefly.sprint.com/sonarqube/dashboard?id=org.ioexcept%3AArchAngel
-ceTaskId=AXVdVHAnpoNj6PBDWPOr
-ceTaskUrl=http://firefly.sprint.com/sonarqube/api/ce/task?id=AXVdVHAnpoNj6PBDWPOr
