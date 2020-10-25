@@ -47,7 +47,10 @@ public class FrontEndServlet extends HttpServlet {
 				}catch(Exception e){
 					System.out.println("RESPONSE CODE NOT FOUND");
 				}
-				if (conn.getResponseCode() == 200) {
+				int responsecode = -1;
+				try{ responsecode = conn.getResponseCode(); }catch(IOException ioe){ responsecode=-1;}
+				if (responsecode == 200) {
+					try{
 					BufferedReader br = new BufferedReader(new InputStreamReader(
 							(conn.getInputStream())));
 					String output;
@@ -55,6 +58,9 @@ public class FrontEndServlet extends HttpServlet {
 					while ((output = br.readLine()) != null) {
 						System.out.println(output);
 						searchresult.append(output);
+					}
+					}catch(IOException ioe){
+						searchresult.append("Result failure");
 					}
 					
 				}else {

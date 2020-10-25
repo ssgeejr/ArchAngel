@@ -13,9 +13,9 @@
 	<url>https://github.com/ssgeejr/ArchAngel</url>
 
 	<modules>
-        <module>archangelms</module>
-        <module>archangelui</module>
-    </modules>
+            <module>archangelms</module>
+            <module>archangelui</module>
+        </modules>
     
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,5 +29,25 @@
 		<tomcat8-version>3.0-r1756463</tomcat8-version>
 	</properties>
 
-
+<profiles>
+<profile>
+<id>sonar</id>
+<activation>
+<activeByDefault>true</activeByDefault>
+</activation>
+<properties>
+<!-- Optional URL to server. Default value is http://localhost:9000 -->
+<sonar.host.url>
+http://firefly.sprint.com/sonarqube
+</sonar.host.url>
+</properties>
+</profile>
+</profiles>
+	<dependencies>
+		<dependency>
+			<groupId>org.sonarsource.scanner.maven</groupId>
+			<artifactId>sonar-maven-plugin</artifactId>
+			<version>3.2</version>
+		</dependency>
+	</dependencies>
 </project>
