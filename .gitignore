@@ -50,6 +50,8 @@ docs/
 hs_err_pid*
 
 target/
+service/target
+frontend/target
 .extract
 .service
 .settings

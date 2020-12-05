@@ -1,7 +1,7 @@
 version: '3'
 services:
     archangeldb:
-        image: 172.31.20.70:8080/sprint/archangeldb
+        image: archangeldb
         container_name: archangeldb
         networks:
                 arch_net:
@@ -13,7 +13,7 @@ services:
         restart: always
 
     service:
-        image: 172.31.20.70:8080/sprint/archangelms
+        image: archangelms
         container_name: archangelms
         networks:
                 arch_net:
@@ -26,7 +26,7 @@ services:
             - archangeldb
 
     ui:
-        image: 172.31.20.70:8080/sprint/archangelui
+        image: archangelui
         container_name: archangelui
         networks:
                 arch_net:
