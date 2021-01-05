@@ -38,7 +38,7 @@
 <properties>
 <!-- Optional URL to server. Default value is http://localhost:9000 -->
 <sonar.host.url>
-http://10.115.254.236:9000/sonarqube
+https://firefly.sprint.com/sonarqube
 </sonar.host.url>
 </properties>
 </profile>
