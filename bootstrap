@@ -1,12 +1,5 @@
 #!/bin/bash
 
-
-#if [ -d "ArchAngel" ]; then
-#  echo "DIRECTORY EXISTS, exiting"
-#  exit -1
-#fi
-
-
 cwd=`pwd`
 clean=0
 start=0
@@ -34,12 +27,6 @@ if [[ $clean == 1 ]]; then
 	docker rmi -f archangeldb
 	docker rmi -f $(docker images | grep 'archangeldb' | awk '{print $3}')
 fi
-
-#kill -9 $(ps -ef | grep '[a]rchAngelService.jar' | awk '{print $2}')
-#kill -9 $(ps -ef | grep '[a]rchAngelFrontEnd.jar' | awk '{print $2}')
-#rm -rf .extract
-#rm -rf frontend/.extract
-#rm -rf service/.extract
 
 cd $cwd/archangeldb/docker
 docker build --tag archangeldb .
@@ -76,6 +63,9 @@ cp ../target/archAngelFrontEnd.jar .
 docker build --tag archangelui .
 
 
+echo "PULLING Dozzle"
+docker pull amir20/dozzle
+
 if [[ $start == 1 ]]; then
 	echo "Application Built, starting application vai: docker-compose up -d"
 	cd $cwd/archangelui
@@ -83,7 +73,6 @@ if [[ $start == 1 ]]; then
 else
 	echo "Application Built, you can start the system by executing: docker-compose up -d"
  fi
-
 
 
 
