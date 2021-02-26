@@ -17,6 +17,11 @@ http://localhost/
 ## [NOTE] I spent a long time working on this project and it went through a number of 'phases' ... the stuff below may or may not be applicable but I'll leave it in the as a reminder to where it began and where it is today
 
 
+![Archangel Block Model](./images/archangel-block-model.jpg)
+
+
+
+
 ### Open Firewall Ports
 Open the selected port, but first find which rule is enabled
 ```
