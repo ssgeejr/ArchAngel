@@ -4,6 +4,9 @@ cwd=`pwd`
 clean=0
 start=0
 
+echo "bringing the system offline ... docker-compose down"
+docker-compose down
+
 for arg in "$@"
 do
     if [[ "x$arg" == "xstart" ]];
@@ -13,9 +16,12 @@ do
     elif [[ "x$arg" == "xclean" ]];
     then
         echo "... Old images will be removed"
-	echo "bringing the system offline ... docker-compose down"
-	docker-compose down
         clean=1
+    elif [[ "x$arg" == "xup" ]];
+    then
+        echo "... starting compose only" 
+	docker-compose up -d
+	exit 1
     fi
 done
 

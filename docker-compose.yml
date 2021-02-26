@@ -28,10 +28,3 @@ services:
             - /var/run/docker.sock:/var/run/docker.sock
         ports:
             - 8080:8080
-
-networks:
-    arch_net:
-        driver: bridge
-        ipam:
-            driver: default
-            config: [{subnet: 192.168.10.0/24}]
