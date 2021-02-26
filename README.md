@@ -34,4 +34,6 @@ http://localhost/
 
 ![Archangel Block Model](./images/archangel-block-model.jpg)
 
+## Bootstrap Build Path
 
+![Archangel Bootstrap](./images/archangel-bootstrap.jpg)
