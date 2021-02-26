@@ -24,11 +24,12 @@ start will start all of the services after bulding them
 
 
 You can now point your browser to the IP the services were started on and it will come up. 
-For example: 
+For example, to see the UI: `http://localhost/`
 
-```
-http://localhost/
-```
+To see the logs, connect to dozzle with `http://localhost:8080`
+
+To see the microservice endpoint, you can connect here: `http://localhost:8880` It will not return any informaiton, however, you can see this by using SoapUI and import the SoapUI project located in the soapui folder. 
+
 
 ## Basic Block Model
 
