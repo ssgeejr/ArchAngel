@@ -31,7 +31,6 @@ if [[ $clean == 1 ]]; then
 	docker stop archangeldb
 	docker rm archangeldb
 	docker rmi -f archangeldb
-	docker rmi -f $(docker images | grep 'archangeldb' | awk '{print $3}')
 fi
 
 cd $cwd/archangeldb/docker
@@ -43,10 +42,9 @@ if [[ $clean == 1 ]]; then
 	docker stop archangelms
 	docker rm archangelms
 	docker rmi -f archangelms
-	docker rmi -f $(docker images | grep 'archangelms' | awk '{print $3}')
 fi
 cd $cwd/archangelms
-rm -rf docker/*.jar
+rm -rf docker/archAngelService.jar
 mvn clean package
 cd docker/
 cp ../target/archAngelService.jar .
@@ -59,10 +57,9 @@ if [[ $clean == 1 ]]; then
 	docker stop archangelui
 	docker rm archangelui
 	docker rmi -f archangelui
-	docker rmi -f $(docker images | grep 'archangelui' | awk '{print $3}')
 fi
 cd $cwd/archangelui
-rm -rf docker/*.jar
+rm -rf docker/archAngelFrontEnd.jar
 mvn clean package
 cd docker
 cp ../target/archAngelFrontEnd.jar .
@@ -73,7 +70,7 @@ echo "PULLING Dozzle"
 docker pull amir20/dozzle
 
 if [[ $start == 1 ]]; then
-	echo "Application Built, starting application vai: docker-compose up -d"
+	echo "Application Built, starting application: docker-compose up -d"
 	cd $cwd/archangelui
 	docker-compose up -d
 else
